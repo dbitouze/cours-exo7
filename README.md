@@ -16,7 +16,7 @@ Récuperer les fichiers sources des cours
 Ce qui nous intéresse ici ce sont les fichiers sources des cours :
 
   * Le site est [GitHub d'Exo7](https://github.com/exo7math).
-  * Le dossier (*Repository*) est `exo7-public`.
+  * Le dossier (*Repository*) est `cours-exo7`.
   * Vous pouvez récuperer tous les fichiers en cliquant sur le bouton en haut à droite *Download ZIP*.
 
 
@@ -35,7 +35,7 @@ La plupart de ces répertoires contiennent un sous-répertoire `figure` qui cont
 
 ### Fichier de styles ###
 
-Le fichier `exo7book.sty` est le fichier de style principal et peut être évoqué avec l'une des options `[screen]`, `[print]`, `[minimal]`. En fonction du choix de l'option, l'un des fichiers `exo7book-screen.sty, `exo7book-print.sty`, `exo7book-minimal.sty` est invoqué. Et la partie commune du style, qui ne dépend pas du choix de l'option, se trouve dans le fichier `exo7book-common.sty`. Tous ces fichiers sont commentés.
+Le fichier `exo7book.sty` est le fichier de style principal et peut être évoqué avec l'une des options `[screen]`, `[print]`, `[minimal]`. En fonction du choix de l'option, l'un des fichiers `exo7book-screen.sty`, `exo7book-print.sty`, `exo7book-minimal.sty` est invoqué. Et la partie commune du style, qui ne dépend pas du choix de l'option, se trouve dans le fichier `exo7book-common.sty`. Tous ces fichiers sont commentés.
 
 Compilation
 -----------
