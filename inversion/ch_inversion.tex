@@ -16,6 +16,7 @@
 L'inversion géométrique est une transformation remarquable du plan. Par exemple, elle peut changer une droite en un cercle
 et un cercle en une droite. Nous étudions ici quelques propriétés de l'inversion. Cela nous permettra de créer un dispositif mécanique qui transforme un mouvement circulaire en un mouvement rectiligne. Nous montrerons enfin que toute construction à la règle et au compas peut s'effectuer au compas seulement.
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Cercle-droite}
 
@@ -166,6 +167,77 @@ Voir l'exercice \ref{exo:inversion_ptoleme} pour une formule.
   En particulier c'est une bijection.
 \end{enumerate}
 \end{proof}
+
+
+%---------------------------------------------------------------
+\subsection{Construction de l'inverse d'un point à la règle et au compas}
+
+\'Etant donné un cercle $\mathcal{C}$ de centre $\Omega$ et un point $M$
+différent de $\Omega$. Comment construire géométriquement, 
+l'image de $M$ par l'inversion $\inversion$ de cercle $\mathcal{C}$ ?
+\begin{itemize}
+  \item Tracer la perpendiculaire à $(\Omega M)$ en $\Omega$. Cette perpendiculaire recoupe le cercle $\mathcal{C}$ en un point $P$.
+  
+  \item Tracer la perpendiculaire à $(MP)$ en $P$. Cette droite recoupe $(\Omega M)$ en un point $M''$. 
+  
+  \item Le symétrique de $M''$ par rapport à $\Omega$ est le point $M'$ qui est l'inverse de $M$ : $M' = \inversion(M)$.
+
+\end{itemize}
+
+
+
+
+\myfigure{0.75}{
+\tikzinput{fig_inversion41}\quad
+\tikzinput{fig_inversion42}\quad
+\tikzinput{fig_inversion43}
+}
+
+
+La construction fonctionne aussi si le point $M$ est à l'intérieur du cercle.
+
+\myfigure{0.9}{
+\tikzinput{fig_inversion44}
+}
+
+On verra une méthode différente, qui n'utilise que le compas dans la section \ref{ssec:invcompas}.
+\begin{lemme}
+Dans un triangle $ABC$, rectangle en $C$, où $H \in [AB]$ est le pied de la hauteur en $C$ alors 
+$$HA \times HB = HC^2$$
+\end{lemme}
+
+\myfigure{1}{
+\tikzinput{fig_inversion40}
+}
+
+\begin{proof}[Preuve du lemme]
+On applique le théorème de Pythagore trois fois.
+\begin{itemize}
+  \item Dans le triangle $ABC$ : $AB^2 = AC^2 + BC^2$.
+  
+  \item Dans le triangle $AHC$ : $AC^2 = HA^2+HC^2$.
+  
+  \item Dans le triangle $BHC$ : $BC^2 = HB^2+HC^2$.   
+\end{itemize}  
+  Comme $AB = HA + HB$ alors 
+  $$(HA + HB) ^2 = AB^2 = AC^2 + BC^2 = (HA^2+HC^2) + (HB^2+HC^2)$$
+  Donc 
+  $$HA^2 + 2 HA \times HB  + HB^2 = HA^2 + HB^2 + 2 HC^2$$
+  et ainsi 
+  $$HA \times HB = HC^2$$
+  
+\end{proof}
+
+\begin{proof}[Preuve de la construction]
+Dans le triangle $M M'' P$ rectangle en $P$ avec $\Omega$ le pied de la hauteur, on a d'après le lemme :
+$$\Omega M \times \Omega M'' = \Omega P^2$$
+comme $\Omega M'' = \Omega M'$ et que $\Omega P = r$, alors
+$$\Omega M \times \Omega M' = r^2$$
+et comme $M'$ est bien sur la demi-droite $[\Omega M)$, $M'$ est  l'inverse de $M$.
+\end{proof}
+
+
+
 
 %---------------------------------------------------------------
 \subsection{\'Ecriture complexe}
@@ -603,6 +675,7 @@ La dernière étape de notre construction est justifiée dans le paragraphe suiv
 
 %---------------------------------------------------------------
 \subsection{Construction de l'inverse d'un point au compas seul}
+\label{ssec:invcompas}
 
 \'Etant donné un cercle $\mathcal{C}$ de centre $\Omega$ et un point $M$
 extérieur à $\mathcal{C}$, nous allons construire, avec le compas seulement, 

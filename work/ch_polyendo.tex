@@ -23,7 +23,7 @@ C'est un résultat théorique important, qui affirme que le polynôme caractéri
 
 On note $M_n(\Kk)$ l'ensemble des matrices de taille $n\times n$ à coefficients dans $\Kk$ 
 ($\Kk = \Qq$, $\Rr$ ou $\Cc$).
-Pour un $\Kk$-espace vectoriel $E$, on note $\mathcal{L}(E)$, l'ensemble des applications linéaires de $E$ dans $E$. Un élément $f \in \mathcal{L}(E)$ est un \defi{endomorphisme} de $E$. Dans ce chapitre, $E$ sera de dimension finie.
+Pour un $\Kk$-espace vectoriel $E$, on note $\mathcal{L}(E)$ l'ensemble des applications linéaires de $E$ dans $E$. Un élément $f \in \mathcal{L}(E)$ est un \defi{endomorphisme} de $E$. Dans ce chapitre, $E$ sera de dimension finie.
 
 %----------------------------------------------------
 \subsection{Définition}
@@ -33,13 +33,13 @@ Pour un $\Kk$-espace vectoriel $E$, on note $\mathcal{L}(E)$, l'ensemble des app
 
 Soit $A \in M_n(\Kk)$ une matrice.
 \`A $X^k$, on associe $A^k$ ; à $1$, on associe la matrice identité $I_n$.
-Plus généralement, soit un polynôme
-\[P(X) = a_0 + a_1 X +a_2 X^2 + \cdots  + a_n X^n \in\Kk[X]\]
+Plus généralement, pour un polynôme
+\[P(X) = a_0 + a_1 X +a_2 X^2 + \cdots  + a_m X^m \in\Kk[X],\]
 on définit la matrice :
-\[P(A) = a_0 I_n +a_1 A +a_2 A^2 +  \cdots +a_n A^n \in M_n(\Kk) \] 
+\[P(A) = a_0 I_n +a_1 A +a_2 A^2 +  \cdots +a_m A^m \in M_n(\Kk) \] 
  
 \begin{exemple}
-Soit $A = \begin{pmatrix}1&-1\\-1&2\end{pmatrix}$ et $P(X) = X^4-5X^2-2X+1$. 
+Soient $A = \begin{pmatrix}1&-1\\-1&2\end{pmatrix}$ et $P(X) = X^4-5X^2-2X+1$. 
 On calcule 
 $$A^2 = \begin{pmatrix}
 2 & -3 \\
@@ -61,20 +61,20 @@ $$
 
 \bigskip
 
-\evidence{Polynôme d'un endomorphisme.} 
+\evidence{Polynôme d'endomorphisme.} 
 
 Soit $f \in \mathcal{L}(E)$.
-\`A $X^k$, on associe $f^k$, c'est-à-dire $\underbrace{f\circ f \circ \cdots \circ f}_{k \text{ occurences}}$. \`A $1$, on associe l'application identité $\id_E$.
-Plus généralement pour le polynôme
-\[P(X) = a_0 + a_1 X +a_2 X^2 + \cdots  + a_n X^n \in\Kk[X]\]
+\`A $X^k$, on associe $f^k$, c'est-à-dire $\underbrace{f\circ f \circ \cdots \circ f}_{k \text{ occurrences}}$. \`A $1$, on associe l'application identité $\id_E$.
+Plus généralement, pour un polynôme
+\[P(X) = a_0 + a_1 X +a_2 X^2 + \cdots  + a_m X^m \in\Kk[X],\]
 on définit l'endomorphisme :
-\[P(A) = a_0 \id_E +a_1 f +a_2 f^2 +  \cdots +a_n f^n \in \mathcal{L}(E) \] 
+\[P(A) = a_0 \id_E +a_1 f +a_2 f^2 +  \cdots +a_m f^m \in \mathcal{L}(E) \] 
 
  
 \begin{exemple}
 Soit $f : \Rr^2 \to \Rr^2$ la rotation d'angle $\theta = \frac{\pi}{6}$ centrée à l'origine.
 Soit $P(X) = X^{11}$. Calculons $P(f)$.
-Pour $k\ge0$, $f^k$ est la rotation d'angle $k\theta = \frac{k\pi}{6}$.
+Pour $k \in \Zz$, $f^k$ est la rotation d'angle $k\theta = \frac{k\pi}{6}$.
 Donc $P(f) = f^{11}$ est la rotation d'angle $\frac{11\pi}{6}$, qui est aussi la rotation d'angle
 $-\frac{\pi}{6}$. Ainsi $P(f) = f^{11} = f^{-1}$.
 \end{exemple}
@@ -82,13 +82,13 @@ $-\frac{\pi}{6}$. Ainsi $P(f) = f^{11} = f^{-1}$.
 
 Les opérations avec les polynômes de matrices se comportent sans surprise.
 \begin{proposition}
-Soit $A \in M_n(\Kk)$ et $P,Q \in \Kk[X]$, alors  
-\[(P \times Q)(A) = P(A) \times Q(A)\]
+Soient $A \in M_n(\Kk)$ et $P,Q \in \Kk[X]$. Alors  
+\[(P \times Q)(A) = P(A) \times Q(A).\]
 \end{proposition}
 
 De même, pour $f \in \mathcal{L}(E)$, $(P \times Q)(f) = P(f) \circ Q(f)$. (Noter la composition.)
 
-Sachant en plus que, pour tout $\lambda,\mu\in\Kk$, $(\lambda P + \mu Q)(A) = \lambda P(A) +\mu Q(A)$, alors on dit en termes savants,  que l'application 
+Sachant en plus que, pour tous $\lambda,\mu\in\Kk$, $(\lambda P + \mu Q)(A) = \lambda P(A) +\mu Q(A)$, alors on dit en termes savants que l'application 
 \[\begin{array}{rcl}
 \Phi_A : \Kk[X] & \longrightarrow & M_n(\Kk) \\
 P(X) & \longmapsto & P(A)
@@ -97,9 +97,9 @@ P(X) & \longmapsto & P(A)
 est un \defi{morphisme d'algèbres} ($A \in M_n(\Kk)$ est fixé).
 
 \begin{proof}
-Si $P(X) = a_0 + a_1X + \cdots + a_nX_n$ et $Q(X) = b_0 + b_1X + \cdots + b_mX^m$, 
+Si $P(X) = a_0 + a_1X + \cdots + a_mX^m$ et $Q(X) = b_0 + b_1X + \cdots + b_\ell X^\ell$, 
 alors 
-$$PQ(X) = a_0b_0 +(a_0 b_1 + a_1b_0) X + \cdots$$ 
+$$(PQ)(X) = a_0b_0 +(a_0 b_1 + a_1b_0) X + \cdots$$ 
 Donc :
 \begin{align*}
 P(A) Q(A)
@@ -120,35 +120,42 @@ De même, les endomorphismes $P(f)$ et $Q(f)$ commutent.
 \subsection{Exemples}
 
 
-\begin{exemple}[Polynôme d'une diagonale]
+\begin{exemple}[Polynôme d'une matrice diagonale]
 Pour 
 \[D = \begin{pmatrix} 
-\lambda_1& &\\
-&\ddots&\\
-&& \lambda_n
+\lambda_1& 0 & \cdots & 0\\
+0 &\lambda_2& \ddots & \vdots\\
+\vdots &\ddots& \ddots &0\\
+0&\cdots&0& \lambda_n
 \end{pmatrix}\]
 on a :
 \[P(D) = \begin{pmatrix} 
-P(\lambda_1)& &\\
-&\ddots&\\
-&& P(\lambda_n)
+P(\lambda_1)& 0 & \cdots & 0\\
+0 &P(\lambda_2)& \ddots & \vdots\\
+\vdots &\ddots& \ddots &0\\
+0&\cdots&0& P(\lambda_n)
 \end{pmatrix}\]
+
 quel que soit le polynôme $P(X) \in \Kk[X]$.
 \end{exemple}
 
 
 \begin{exemple}
-Montrer plus généralement que pour une matrice triangulaire :
+Montrer plus généralement que pour une matrice triangulaire
 \[T =\begin{pmatrix} 
-\lambda_1& * & *\\
-&\ddots& * \\
-&& \lambda_n\end{pmatrix}\]
+\lambda_1& * & \cdots & *\\
+0 &\lambda_2& \ddots & \vdots\\
+\vdots &\ddots& \ddots &*\\
+0&\cdots&0& \lambda_n
+\end{pmatrix}\]
 on a :
 \[P(T) = \begin{pmatrix} 
-P(\lambda_1)& * & * \\
-&\ddots & * \\
-&& P(\lambda_n)
+P(\lambda_1)& * & \cdots & *\\
+0 &P(\lambda_2)& \ddots & \vdots\\
+\vdots &\ddots& \ddots &*\\
+0&\cdots&0& P(\lambda_n)
 \end{pmatrix}\]
+
 pour tout polynôme $P(X)  \in \Kk[X]$. 
 Les coefficients au-dessus de la diagonale peuvent avoir une expression compliquée, mais les coefficients diagonaux sont obtenus simplement en leur appliquant le polynôme $P$.
 \end{exemple}
@@ -159,28 +166,27 @@ Les coefficients au-dessus de la diagonale peuvent avoir une expression compliqu
 \sauteligne
 \begin{enumerate}
   \item Soit $A = \left(\begin{smallmatrix}-2&1\\0&3\end{smallmatrix}\right)$.
-  Pour $P(X) =  X^n-X$, calculer $P(A)$ en fonction de $n > 1$.
+  Pour $P(X) =  X^2-X$, calculer $P(A)$. Idem avec $P(X) =  X^3-X$, puis  $P(X) =  X^4-X$.
   
   \item Soit $f : \Rr^3 \to \Rr^3$, $f(x,y,z) = (\frac y2, -x, 3z)$.
-  Pour $P(X) = X^n - 2X +1$, calculer $P(f)$ en fonction de $n\ge1$.
+  Pour $P(X) = X^n$, calculer $P(f)$ en fonction de $n\ge1$ (commencer par les petites valeurs de $n$ : $n=1,2,3,4,\ldots$).
 
-  \item Soit $A = 
+  \item Soient $A = 
   \left(\begin{smallmatrix}
   2 & -3 \\
   -4 & 1  
   \end{smallmatrix}\right)$, $P(X)=X^2-3X$.
   Montrer que $P(A)=10 I_2$. Factoriser $P(X)$ et en déduire $A^{-1}$. 
-  Faire un travail similaire pour $B = 
+  Faire un travail similaire pour $A = 
   \left(\begin{smallmatrix}
   1 & 0 & -2 \\
 0 & -4 & 1 \\
 1 & 0 & -1\end{smallmatrix}\right)$, $P(X)=X^3+4X^2+X$.
   
   \item Soient $A,A',B$ des matrices (avec $B$ inversible) telles que $A' = B A B^{-1}$.
-Montrer que pour tout polynôme $P(X) \in \Kk[X]$, $P(A') = B P(A) B^{-1}$.
+Montrer que, pour tout polynôme $P(X) \in \Kk[X]$, $P(A') = B P(A) B^{-1}$.
   
-  \item Trouver une matrice $A$ de taille $3\times 3$ telle que $A^2\neq 0$, mais $A^3 = 0$.
-  Trouver une matrice $B$ de taille $3\times 3$ telle que $B^2-I_3\neq 0$, mais $B^3 - I_3 = 0$.
+  \item Trouver une matrice $A$ de taille $3\times 3$ telle que $A^2\neq 0$, mais $A^3 = 0$. Trouver une matrice $B$ de taille $3\times 3$ telle que $B^2 \neq I_3$, mais $B^3 = I_3$.
 \end{enumerate}
 \end{miniexercices}
 
@@ -203,10 +209,10 @@ Le sous-espace vectoriel $F$ de $E$ est \defi{stable} par $f$ si :
 \end{definition}
 
 
-Autrement dit, $F$ est stable par $f$, si $f(F) \subset F$.
+Autrement dit, $F$ est stable par $f$ si $f(F) \subset F$.
 
 Un premier exemple : les sous-espaces propres de $f$ sont stables par $f$.
-En effet, soit $F = \Ker(f-\lambda \id_E)$, alors pour $x \in F$, $f(x) = \lambda x \in F$.
+En effet, si $F = \Ker(f-\lambda \id_E)$ alors, pour $x \in F$, $f(x) = \lambda x \in F$.
 
 
 
@@ -214,7 +220,7 @@ En effet, soit $F = \Ker(f-\lambda \id_E)$, alors pour $x \in F$, $f(x) = \lambd
 \label{ex:polyendorot}
 Soit $(e_1,e_2,e_3)$ la base canonique de $\Rr^3$. Soit $r_\theta$ la rotation d'axe vertical $e_3$ et d'angle $\theta$. L'endomorphisme $r_\theta$ de $\Rr^3$ laisse invariant deux sous-espaces :
 \[F_1 = \Vect(e_1,e_2) = \Rr e_1 \oplus \Rr e_2 \quad \text{ et } \quad  F_2 = \Vect(e_3) = \Rr e_3\]
-La matrice de $f$ dans cette base $(e_1,e_2,e_3)$ est la matrice :
+La matrice de $f$ dans cette base $(e_1,e_2,e_3)$ est la matrice
 \[\begin{pmatrix}
 \cos \theta & -\sin \theta& 0\\
 \sin \theta & \cos \theta & 0\\
@@ -228,7 +234,7 @@ La matrice de cet exemple a une structure particulière. Voyons pourquoi.
 
 \evidence{Effet sur les matrices.}
 
-Supposons que $E$ est de dimension $n$, que $f$ est un endomorphisme de $E$, et que $F$ est un sous-espace de $E$ stable par $f$. Notons :
+Supposons que $E$ est de dimension $n$, que $f$ est un endomorphisme de $E$, et que $F$ est un sous-espace de $E$ stable par $f$. Notons
 \[(e_1,\ldots,e_p)\]
 une base de $F$. On la complète en une base de $E$ :
 \[\mathcal{B} = (e_1,\ldots,e_p,e_{p+1},\ldots,e_n).\]
@@ -246,7 +252,7 @@ a_{p,1}&\cdots&a_{p,p}&b_{p,1}&\cdots&b_{p,n-p}\\ \hline
 =
 \left(\begin{array}{c|c}
 A & B\\ \hline
-  & D\\
+0 & D\\
 \end{array}\right)
 \]
 où $A=(a_{i,j})_{1 \le i,j \le p}\in M_p(\Kk)$ est la matrice de $f_{|F}$ dans la base $(e_1,\ldots,e_p)$ de $F$.
@@ -259,15 +265,15 @@ alors la matrice de $f$ est diagonale par blocs :
 \left(\begin{array}{ccc|ccc}
 a_{1,1}&\cdots&a_{1,p}&0&\cdots&0\\
 \vdots&&\vdots&\vdots&&\vdots\\
-a_{p,1}&&a_{p,p}&0&\cdots&0\\ \hline
+a_{p,1}&\cdots&a_{p,p}&0&\cdots&0\\ \hline
 0&\cdots&0&d_{1,1}&\cdots&d_{1,n-p}\\
 \vdots&&\vdots&\vdots&&\vdots\\
 0&\cdots&0&d_{n-p,1}&\cdots&d_{n-p,n-p}
 \end{array}\right)
 =
 \left(\begin{array}{c|c}
-A & \\ \hline
-  & D\\
+A & 0\\ \hline
+0 & D\\
 \end{array}\right)
 \]
 Voir l'exemple \ref{ex:polyendorot} ci-dessus.
@@ -280,17 +286,17 @@ Voir l'exemple \ref{ex:polyendorot} ci-dessus.
 
 
 \begin{lemme}
-Si $F$ est un sous-espace vectoriel stable par $f$, alors pour tout polynôme $P \in \Kk[X]$, $F$ est stable par $P(f)$.
+Si $F$ est un sous-espace vectoriel stable par $f$ alors, pour tout polynôme $P \in \Kk[X]$, $F$ est stable par $P(f)$.
 \end{lemme} 
 
 \begin{proof}
-Soit $x \in F$, alors $f(x) \in F$, donc $f(f(x)) \in F$. 
-Par récurrence sur $k$, on montre que $f^{k}(x)\in F$.
-Maintenant si $P(X)=\sum_{k=0}^n a_k X^k$ alors
+Si $x \in F$, alors $f(x) \in F$ et donc $f(f(x)) \in F$. 
+Par récurrence sur $k$, on montre que $f^{k}(x)\in F$, pour tout $k\ge0$.
+Maintenant, si $P(X)=\sum_{k=0}^m a_k X^k$, alors
 $P(f)$ est l'endomorphisme défini par
-$$P(f)=a_0 \id_E+a_1 f+a_2 f^2+\cdots+a_n f^n.$$
+$$P(f)=a_0 \id_E+a_1 f+a_2 f^2+\cdots+a_m f^m.$$
 Donc 
-$$P(f)(x)=a_0 x+a_1 f(x)+a_2 f^2(x)+\cdots+a_n f^n(x).$$
+$$P(f)(x)=a_0 x+a_1 f(x)+a_2 f^2(x)+\cdots+a_m f^m(x).$$
 Chaque terme $a_k f^k(x) \in F$, donc $P(f)(x) \in F$ car $F$ est un espace vectoriel.
 Conclusion : $F$ est stable par $P(f)$.
 \end{proof}
@@ -301,16 +307,14 @@ Conclusion : $F$ est stable par $P(f)$.
 Une autre proposition souvent utile est la suivante :
 
 \begin{proposition}
-Soient $f$ et $g$ deux endomorphismes de $E$ qui commutent, c'est-à-dire tels que $f \circ g=g \circ f$, 
-alors $\Ker g$ et $\Im g$ sont stables par $f$.
+Soient $f$ et $g$ deux endomorphismes de $E$ qui commutent, c'est-à-dire tels que $f \circ g=g \circ f$. Alors $\Ker g$ et $\Im g$ sont stables par $f$.
 \end{proposition} 
 
 \begin{proof}~
 \begin{itemize}
-  \item Soit $x\in\Ker g$, on  a $g(x)=0$, d'où $g(f(x))=f(g(x))=f(0)=0$, donc $f(x)\in\Ker g$.
+  \item Soit $x\in\Ker g$. On  a $g(x)=0$, d'où $g(f(x))=f(g(x))=f(0)=0$, donc $f(x)\in\Ker g$.
 
-  \item Soit $y\in\Im g$, il existe $x\in E$ tel que $y=g(x)$, on a alors 
-$f(y)=f(g(x))=g(f(x))$ donc $f(y)\in \Im g$.
+  \item Soit $y\in\Im g$. Il existe $x\in E$ tel que $y=g(x)$, d'où $f(y)=f(g(x))=g(f(x))$, donc $f(y)\in \Im g$.
 \end{itemize}
 \end{proof} 
 
@@ -338,10 +342,10 @@ Alors :
 \begin{proof}
 On considère une base $(e_1,\dots,e_p)$ de $F$, 
 et on la complète en une base $(e_1,\dots,e_p,e_{p+1},\dots,e_n)$ de $E$. 
-La matrice de $f$ dans cette base est de la forme :
+La matrice de $f$ dans cette base est de la forme
 $$M = \left(\begin{array}{c|c}
 A & B \\ \hline 
- 0 & D\end{array}\right).$$
+0 & D \end{array}\right)$$
 où $A \in M_p(\Kk)$ est la matrice de $f_{|F}$ dans la base $(e_1,\dots,e_p)$. 
 
 On a alors
@@ -354,7 +358,7 @@ On a alors
  &= \det(A-XI_p) \times \det(D-XI_{n-p}) \\
  &= \chi_{f_{|F}}(X) \times Q(X).
 \end{align*}
-Ce qui prouve que $\chi_{f_{|F}}(X)$ divise $\chi_f(X)$.
+Cela prouve que $\chi_{f_{|F}}(X)$ divise $\chi_f(X)$.
 \end{proof}
 
 
@@ -365,21 +369,18 @@ Ce qui prouve que $\chi_{f_{|F}}(X)$ divise $\chi_f(X)$.
 \sauteligne
 \begin{enumerate}
 
-  \item Trouver les sous-espaces stables de l'application $f : \Rr^3 \to \Rr^3$,
-  $f(x,y,z) = (2x-y,3x-2y,\frac13z)$. Calculer la matrice de $f$ dans la base canonique. 
-  Déterminer le polynôme caractéristique de $f$ et ceux des restrictions de $f$ aux sous-espaces
-  stables.
-
+  \item Soit $f : \Rr^3 \to \Rr^3$,
+  $f(x,y,z) = (2x-y,3x-2y,\frac13z)$. Calculer la matrice de $f$ dans la base canonique et déterminer le polynôme caractéristique de $f$. En déduire les sous-espaces stables de l'application 
     
   \item Soit  $A = 
   \left(\begin{smallmatrix}
-   3 & 3 & 2 \\
-0 & 3 & 1 \\
--1 & -4 & -1
+1 & -1 & 0 \\
+-2 & -1 & -1 \\
+-1 & -2 & 1  
   \end{smallmatrix}\right)$.
   Trouver une valeur propre de $A$ et un vecteur propre associé.   
-  Trouver les sous-espaces stables de cette matrice. Trouver une matrice $P$ telle que
-  $P^{-1}AP$ soit une matrice diagonale par blocs.
+  Montrer que les vecteurs 
+  $w_1 = \left(\begin{smallmatrix}-1\\0\\1\end{smallmatrix}\right)$ et $w_1 = \left(\begin{smallmatrix}0\\1\\1\end{smallmatrix}\right)$ engendrent un sous-espaces stable de dimension $2$ de cette matrice. En déduire une matrice $P$ telle que $P^{-1}AP$ soit une matrice diagonale par blocs.
   
   \item Soit $f$ l'application linéaire définie
   par la matrice 
@@ -397,7 +398,7 @@ Soit $g$ l'application linéaire définie
 3 & 3 & 3 \\
 -2 & 0 & -1
 \end{smallmatrix}\right)$.
-  Montrer que $f \circ g = g \circ f$. Calculer $\Ker g$ et $\Im g$, vérifier qu'ils sont stables par $f$. Calculer $\Ker f$ et $\Im f$, vérifier qu'ils sont stables par $g$.
+  Montrer que $f \circ g = g \circ f$. Calculer $\Ker g$ et $\Im g$ et vérifier qu'ils sont stables par $f$. Calculer $\Ker f$ et $\Im f$ et vérifier qu'ils sont stables par $g$.
   
 \end{enumerate}
 \end{miniexercices}
@@ -413,10 +414,10 @@ Soit $g$ l'application linéaire définie
 
 \begin{theoreme}[de Cayley-Hamilton]
 \label{th:cayley-hamilton}
-Soit $A \in M_n(\Kk)$, alors :
-\mybox{$\chi_A(A)  =0$}
-De même, soit $f \in \mathcal{L}(E)$, avec $E$  de dimension finie, alors :
-\mybox{$\chi_f(f) = 0$}
+Soit $A \in M_n(\Kk)$. Alors
+\mybox{$\chi_A(A)  =0$.}
+De même, soit $f \in \mathcal{L}(E)$, avec $E$  de dimension finie. Alors :
+\mybox{$\chi_f(f) = 0$.}
 \end{theoreme}
 
 L'égalité $\chi_A(A) = 0$ signifie que le polynôme caractéristique appliqué à $A$ donne la matrice nulle.
@@ -461,13 +462,13 @@ Soient les deux matrices de $M_n(\Kk)$ suivantes :
 \qquad  \text{ et } \qquad 
 J = \begin{pmatrix}
 0&\cdots&\cdots&0&1\\
-1&\ddots&&&0\\
-0&\ddots&\ddots&&\vdots\\
+1&0 & \cdots&\cdots&0\\
+0&1&\ddots&&\vdots\\
 \vdots&\ddots&\ddots&\ddots&\vdots\\
 0&\cdots&0&1&0
-\end{pmatrix}\]
-D'une part $\chi_N(X) = (-1)^nX^n$ et on a bien $N^n=0$.
-D'autre part $\chi_J(X) = (-1)^n(X^n -1)$  et on a bien $J^n = I_n$.
+\end{pmatrix}.\]
+D'une part, $\chi_N(X) = (-1)^nX^n$ et on a bien $N^n=0$.
+D'autre part, $\chi_J(X) = (-1)^n(X^n -1)$  et on a bien $J^n = I_n$.
 \end{exemple}
 
 
@@ -477,11 +478,11 @@ D'autre part $\chi_J(X) = (-1)^n(X^n -1)$  et on a bien $J^n = I_n$.
 \begin{proof}[Démonstration du théorème de Cayley-Hamilton]~\\
 On suppose $E$ de dimension finie $n$.
 Soit $f$ un endomorphisme de $E$. Soit $x$ un vecteur non nul de $E$. 
-Soit $1 \le p \le n$ le plus grand entier tel que la famille :
-\[x, f(x),\ldots,f^{p-1}(x)\]
-soit libre. Alors forcément, la famille 
-\[x, f(x),\ldots,f^{p-1}(x),f^{p}(x)\]
-est liée.  Ainsi  
+Soit $1 \le p \le n$ le plus grand entier tel que la famille
+\[\big( x, f(x),\ldots,f^{p-1}(x) \big)\]
+soit libre. Alors, forcément, la famille 
+\[\big( x, f(x),\ldots,f^{p-1}(x),f^{p}(x) \big)\]
+est liée et, plus précisément,  
 \begin{equation}
 \label{eq:combCH}
 c_0x + c_1 f(x) + \cdots +c_{p-1}f^{p-1}(x) + f^p(x) =0
@@ -491,13 +492,13 @@ pour certains coefficients $c_0,\ldots, c_{p-1}\in \Kk$.
 Posons $F  = \Vect( x, f(x),\ldots,f^{p-1}(x) )$. 
 C'est un sous-espace vectoriel de $E$ (de dimension $p$) stable par $f$. 
 En effet, notons $v_0 = x$, $v_1 = f(x)$, \ldots, $v_{p-1} = f^{p-1}(x)$.
-Alors pour $0 \le k \le p-2$, on a $f(v_k) = v_{k+1} \in F$ ;
-et par la relation (\ref{eq:combCH}), 
-$$f(v_{p-1}) = f^p(x) = -c_0 v_0 - c_1v_1 - \cdots - c_{p-1}v_{p-1} \in F$$
+Alors, pour $0 \le k \le p-2$, on a $f(v_k) = v_{k+1} \in F$ ;
+et, par la relation (\ref{eq:combCH}), 
+$$f(v_{p-1}) = f^p(x) = -c_0 v_0 - c_1v_1 - \cdots - c_{p-1}v_{p-1} \in F.$$
 
 De plus, la matrice de la restriction $f_{|F}$ dans la base 
 \[\big(x, f(x),\ldots,f^{p-1}(x)\big)\]
-est la matrice :
+est la matrice
 \[A = 
 \begin{pmatrix}
 0&\cdots&\cdots&0&-c_{0}\\
@@ -505,15 +506,14 @@ est la matrice :
 0&\ddots&\ddots&\vdots&\vdots\\
 \vdots&\ddots&\ddots&0&\vdots\\
 0&\cdots&0&1&-c_{p-1}
-\end{pmatrix}\]
+\end{pmatrix}.\]
 C'est une matrice compagnon, donc :
 \[\chi_A(X)= \pm(X^p + c_{p-1}X^{p-1}+\cdots+c_0) .\]
 
 
-D'après le lemme \ref{lem:restr}, $\chi_A(X)$ divise $\chi_f(X)$ c'est-à-dire :
+D'après le lemme \ref{lem:restr}, $\chi_A(X)$ divise $\chi_f(X)$, c'est-à-dire
 \[\chi_f(X)= Q(X)\chi_A(X)\]
 pour un certain polynôme $Q(X) \in \Kk[X]$. On a alors :
-
 \begin{align*}
 \chi_f(f)(x)
   &= \big(Q(f) \circ \chi_A(f)\big) (x) \\
@@ -522,7 +522,7 @@ pour un certain polynôme $Q(X) \in \Kk[X]$. On a alors :
   &= Q(f)(0) \\
   &= 0
 \end{align*}
-Finalement $\chi_f(f)(x)=0$ pour tout vecteur $x$ de $E$ et donc $\chi_f(f)=0$.
+Finalement, $\chi_f(f)(x)=0$ pour tout vecteur $x$ de $E$, et donc $\chi_f(f)=0$.
 \end{proof}
 
 
@@ -538,9 +538,9 @@ On dit qu'un polynôme $P(X)$ est un \defi{polynôme annulateur} de la matrice $
 \sauteligne
 \begin{itemize}
 
-  \item Soit $p : E \to E$ tel que $p ^2=p$ (c'est une \defi{projection}), alors $X^2-X$ est un polynôme annulateur de $p$.
+  \item Soit $p : E \to E$ tel que $p ^2=p$ (c'est une \defi{projection}). Alors $X^2-X$ est un polynôme annulateur de $p$.
 
-  \item Soit $r : E \to E$ tel que $r^2 =\id_E$ (c'est une \defi{réflexion}), alors $X^2-1$ est un polynôme annulateur de $r$.
+  \item Soit $r : E \to E$ tel que $r^2 =\id_E$ (c'est une \defi{réflexion}). Alors $X^2-1$ est un polynôme annulateur de $r$.
 \end{itemize}
 \end{exemple}
 
@@ -568,7 +568,7 @@ Comme $f(x) = \lambda x$, on a :
 et plus généralement, pour tout polynôme $Q(X)$ :
 \[Q(f)(x) = Q(\lambda)x \]
 
-En particulier, comme $P(f)(x)=0$, alors $P(\lambda) x =0$ ce qui implique 
+En particulier, comme $P(f)(x)=0$, alors $P(\lambda) x =0$, ce qui implique 
 $P(\lambda) = 0$ car $x \neq 0$.
 \end{proof}
 
@@ -580,7 +580,7 @@ $P(\lambda) = 0$ car $x \neq 0$.
 \begin{miniexercices}
 \sauteligne
 \begin{enumerate}
-  \item Pour $A = \left(\begin{smallmatrix}
+  \item Soit $A = \left(\begin{smallmatrix}
   -5 & -3 & 3 \\
   7 & 3 & -3 \\
   1 & -2 & 2
@@ -612,8 +612,8 @@ $P(\lambda) = 0$ car $x \neq 0$.
 
 
 Nous venons de démontrer que si $f$ est un endomorphisme et $\chi_f$ est son 
-polynôme caractéristique, alors $\chi_f(f)=0$ (et de même $\chi_A(A)=0$ pour $A\in M_n(\Kk)$). 
-Nous allons démontrer qu'il existe un plus petit polynôme ayant cette propriété, ce polynôme n'est pas toujours le polynôme caractéristique.
+polynôme caractéristique alors $\chi_f(f)=0$ (et de même $\chi_A(A)=0$ pour $A\in M_n(\Kk)$). 
+Nous allons démontrer qu'il existe un plus petit polynôme ayant cette propriété, ce polynôme n'étant pas toujours le polynôme caractéristique.
 
 
 %----------------------------------------------------
@@ -623,7 +623,7 @@ Nous allons démontrer qu'il existe un plus petit polynôme ayant cette proprié
 
 \begin{proposition}
 \label{prop:polymini1}
-Soit $f$ un endomorphisme de $E$, il existe un unique polynôme $\mu_f(X) \in \Kk[X]$ 
+Soit $f$ un endomorphisme de $E$. Il existe un unique polynôme $\mu_f(X) \in \Kk[X]$ 
 qui vérifie les trois conditions suivantes :
 \begin{itemize}
   \item $\mu_f(X)$ est un polynôme annulateur pour $f$ ;
@@ -656,7 +656,7 @@ Montrons que $\mu_A(X) = X^2-X$.
 \end{itemize}
 \end{exemple} 
 
-Autres exemples. Le polynôme minimal de la matrice identité est $I_n$ est $\mu_A(X) = X -1$ (quelque soit $n\ge1$). Le polynôme minimal de la matrice nulle est $X$.
+Autres exemples. Le polynôme minimal de la matrice identité $I_n$ est $\mu_A(X) = X -1$ (quel que soit $n\ge1$). Le polynôme minimal de la matrice nulle est $X$.
 
 \bigskip
 
@@ -681,19 +681,18 @@ Nous prouvons les propositions \ref{prop:polymini1} et \ref{prop:polymini2} en m
 
 \begin{proof}~
 \begin{itemize}
-  \item Notons $n=\dim E$. Soit $f$ un endomorphisme de $E$ et $\chi_f$ son polynôme caractéristique. Par le théorème de Cayley-Hamilton, le polynôme $(-1)^n\chi_f$ est unitaire et annule $f$.
-Ainsi, l'ensemble des polynômes non nuls vérifiant $P(f)=0$ n'est pas vide. Choisissons dans cet ensemble un polynôme $Q$ de degré minimal. 
+  \item Notons $n=\dim E$. Soit $f$ un endomorphisme de $E$ et soit $\chi_f$ son polynôme caractéristique. Par le théorème de Cayley-Hamilton, le polynôme $(-1)^n\chi_f$ est unitaire et annule $f$.
+Ainsi, l'ensemble des polynômes $P$ non nuls vérifiant $P(f)=0$ n'est pas vide. Choisissons dans cet ensemble un polynôme $Q$ de degré minimal. 
 
   \item Il est clair que tout polynôme multiple de $Q$ s'annule également en $f$. En effet, si $P=BQ$, alors $P(f)=B(f)\circ Q(f)=0$ car $Q(f) = 0$.
  
  
   \item Réciproquement, soit $P\in \Kk[X]$ tel que $P(f)=0$. On effectue la division euclidienne de $P$ par $Q$ : on obtient $P=BQ+R$ avec $\deg R<\deg Q$. Ainsi 
 $$P(f)=B(f)\circ Q(f)+R(f)=0.$$
-Comme $P(f)=0$ et $Q(f)=0$ alors on déduit de la division euclidienne, que l'on a aussi $R(f)=0$. 
-Par l'absurde, si $R(X)$ n'est pas le polynôme nul, alors on a obtenu un polynôme non nul qui annule $f$ et qui est de degré strictement inférieur à celui de $Q$ ; c'est contradictoire avec le choix de $Q$. Bilan : $R=0$. D'où $P=BQ$, c'est-à-dire $Q$ divise $P$.
+Comme de plus $Q(f)=0$, alors on déduit de la division euclidienne que l'on a aussi $R(f)=0$. Par l'absurde, si $R(X)$ n'est pas le polynôme nul, alors on a obtenu un polynôme non nul qui annule $f$ et qui est de degré strictement inférieur à celui de $Q$ ; c'est contradictoire avec le choix de $Q$. Bilan : $R=0$. D'où $P=BQ$, c'est-à-dire $Q$ divise $P$.
 
    \item Vérifions l'unicité d'un tel $Q$ s'il est choisi unitaire.
-   Supposons qu'il existe $Q_1$ et $Q_2$, tous deux de degré minimal, unitaires et annulant $f$. Alors par ce qui précède, $Q_1$ divise $Q_2$ et de même $Q_2$ divise $Q_1$. Ce qui prouve $Q_1=Q_2$.
+   Supposons qu'il existe $Q_1$ et $Q_2$, tous deux de degré minimal, unitaires et annulant $f$. Alors, par ce qui précède, $Q_1$ divise $Q_2$ et de même $Q_2$ divise $Q_1$, ce qui prouve que $Q_1=Q_2$.
 \end{itemize}
 \end{proof}
 
@@ -719,20 +718,19 @@ Soit $\lambda \in \Kk$.
 
 \begin{proof}~
 \begin{itemize}
-  \item $\Longleftarrow$
+  \item $\Longleftarrow$.
 On sait que $\mu_f$ divise $\chi_f$. Comme $\chi_f(X) = B(X) \times \mu_f(X)$
-alors, si $\lambda$ est racine du polynôme minimal $\mu_f(\lambda) = 0$,
-donc $\chi_f(\lambda) = B(\lambda) \times \mu_f(\lambda) = 0$. Donc $\lambda$ est racine du polynôme caractéristique, c'est donc une valeur propre de $f$.
+alors, si $\lambda$ est racine du polynôme minimal, $\mu_f(\lambda) = 0$ et
+donc $\chi_f(\lambda) = B(\lambda) \times \mu_f(\lambda) = 0$. Donc $\lambda$ est racine du polynôme caractéristique : c'est donc une valeur propre de $f$.
 
 
-  \item $\Longrightarrow$
-Réciproquement, supposons que $\lambda$ soit une valeur propre de $f$, notons $x$ un vecteur propre, 
-de sorte que $f(x) = \lambda x$. Alors pour tout $k\ge0$,
-$f^k(x) = \lambda^k x$ et plus généralement $P(f)(x) = P(\lambda) x$.
+  \item $\Longrightarrow$.
+Réciproquement, supposons que $\lambda$ soit une valeur propre de $f$ et notons $x$ un vecteur propre, de sorte que $f(x) = \lambda x$. Alors, pour tout $k\ge0$,
+$f^k(x) = \lambda^k x$ et plus généralement, pour tout polynôme $P \in \Kk[X]$, $P(f)(x) = P(\lambda) x$.
 Donc $P(\lambda)$ est valeur propre de l'endomorphisme $P(f)$.
 On applique ceci au polynôme minimal $\mu_f(X)$ : 
 $\mu_f(f)(x) = \mu_f(\lambda) x$.
-Or, par définition du polynôme minimal $\mu_f(f)$ est l'endomorphisme identiquement nul.
+Or, par définition du polynôme minimal, $\mu_f(f)$ est l'endomorphisme identiquement nul.
 Ainsi $\mu_f(f)(x) = 0$, donc par l'égalité précédente $\mu_f(\lambda) x = 0$. Comme $x\neq0$, alors $\mu_f(\lambda)=0$. 
 
 \end{itemize}
@@ -747,7 +745,7 @@ Ainsi $\mu_f(f)(x) = 0$, donc par l'égalité précédente $\mu_f(\lambda) x = 0
 
 Comme le polynôme minimal divise le polynôme caractéristique, alors on a le résultat suivant :
 \begin{lemme}
-Soit $A \in M_n(\Kk)$. On suppose que le polynôme caractéristique est scindé :
+Soit $A \in M_n(\Kk)$. On suppose que le polynôme caractéristique de $A$ est scindé :
 \[\chi_A(X) = \pm(X-\lambda_1)^{m_1}\cdots(X-\lambda_r)^{m_r}\]
 où $m_1,\ldots,m_r \ge 1$, $\lambda_1,\ldots,\lambda_r \in \Kk$ sont deux à deux distincts. Alors :
 \[\mu_A(X) = (X-\lambda_1)^{k_1}\cdots(X-\lambda_r)^{k_r}\]
@@ -796,20 +794,20 @@ A & \begin{pmatrix}
 Soit 
 \[
 D = \begin{pmatrix}
-\lambda_1& &\\
-&\ddots&\\
-&& \lambda_n
-\end{pmatrix}
-\]
-alors $\mu_D(X) = \prod_{\lambda \in \Sp(D)}(X-\lambda)$ où $\Sp(D) = \{\lambda_1,\ldots,\lambda_n\}$ et les valeurs propres sont comptées sans multiplicité.
-Par exemple si 
+\lambda_1& 0 & \cdots & 0\\
+0 &\lambda_2& \ddots & \vdots\\
+\vdots &\ddots& \ddots &0\\
+0&\cdots&0& \lambda_n
+\end{pmatrix}.\]
+Alors $\mu_D(X) = \prod_{\lambda \in \Sp(D)}(X-\lambda)$ où $\Sp(D) = \{\lambda_1,\ldots,\lambda_n\}$ et les valeurs propres sont comptées sans multiplicité.
+Par exemple, si 
 \[
 D = \begin{pmatrix}
-2& &\\
-&2&\\
-&&-5
-\end{pmatrix}\]
-Alors $\lambda_1= 2$, $\lambda_2 = 2$ et $\lambda_3 = -5$. Donc
+2&0&0\\
+0&2&0\\
+0&0&-5
+\end{pmatrix},\]
+alors $\lambda_1= 2$, $\lambda_2 = 2$ et $\lambda_3 = -5$. Donc
 $\Sp(D) = \{2,-5\}$. Le polynôme minimal est $\mu_D(X) = (X-2)(X+5)$. Le polynôme caractéristique,
  quant à lui, est $\chi_D(X) = -(X-2)^2(X+5)$.
 
@@ -829,42 +827,39 @@ Une matrice $A \in M_n(\Kk)$ (resp. un endomorphisme $f \in\mathcal{L}(E)$) est 
 \end{theoreme}
 
 On rappelle qu'un polynôme $P(X) \in \Kk[X]$ est \defi{scindé à racines simples dans $\Kk$} 
-si toutes les racines de $P$ sont dans $\Kk$ et qu'elles sont simples. Un tel polynôme se factorise en :
+s'il se factorise en :
 \[P(X) = a_r (X-\lambda_1)\cdots(X-\lambda_r)\]
 où $a_r \in \Kk^*$ et $\lambda_1,\ldots,\lambda_r \in \Kk$ sont deux à deux distincts. 
 
 
 \begin{exemple}
 Soit 
-$$A=\begin{pmatrix}2&1&-1\cr -1&-1&3\cr 0&-1&3\end{pmatrix},$$
-on a 
+$$A=\begin{pmatrix}2&1&-1\cr -1&-1&3\cr 0&-1&3\end{pmatrix}.$$
+On a 
 $$\chi_A(X)=\begin{vmatrix}2-X&1&-1\cr -1&-1-X&3\cr 0&-1&3-X\end{vmatrix}=(2-X)(1-X)^2.$$
-Le polynôme minimal $\mu_A$ de $A$ divise $\chi_A$ et admet les mêmes racines,
+Le polynôme minimal $\mu_A$ de $A$ divise $\chi_A$ et admet les mêmes racines :
 il est donc égal à $(X-1)(X-2)$ ou $(X-1)^2(X-2)$. Or
 $$(A-I_3)(A-2I_3)=\begin{pmatrix}-1&-1&1\cr 2&2&-2\cr 1&1&-1\end{pmatrix}\neq 0,$$
 donc le polynôme minimal de $A$ n'est pas $(X-1)(X-2)$.
 Ainsi, le polynôme minimal est égal à $(X-1)^2(X-2)$, 
-il admet une racine double. Par conséquent, le théorème \ref{th:minidiag} implique que $A$ n'est diagonalisable, 
-ni dans $\Rr$, ni dans $\Cc$.  
+et en particulier il admet une racine double. Par conséquent, le théorème \ref{th:minidiag} implique que $A$ n'est diagonalisable 
+ni dans $\Rr$ ni dans $\Cc$.  
 \end{exemple}
 
 \begin{proof}~
 
 \begin{itemize}
-\item $\Longrightarrow$ 
-
-Si $A$ est diagonalisable, $A$ est semblable à une matrice diagonale. Or deux matrices semblables ont le même polynôme minimal (à faire en exercice). Donc il suffit de calculer le polynôme minimal d'une matrice diagonale ce qui est l'objet d'un exercice précédent 
+\item $\Longrightarrow$.
+Si $A$ est diagonalisable, $A$ est semblable à une matrice diagonale. Or deux matrices semblables ont le même polynôme minimal (à faire en exercice). Donc il suffit de calculer le polynôme minimal d'une matrice diagonale, ce qui est l'objet d'un exercice précédent 
 (exemple \ref{ex:minidiag}) : ce polynôme est scindé à racines simples.
 
-\item $\Longleftarrow$
-
-\begin{itemize}
-    \item On suppose que le polynôme minimal de $A$ est scindé à racines simples :
+\item $\Longleftarrow$.
+On suppose que le polynôme minimal de $A$ est scindé à racines simples :
    $\mu_A(X) = (X-\lambda_1)\cdots(X-\lambda_r)$ avec $\lambda_1,\ldots,\lambda_r\in \Kk$ deux à deux distincts.
-   
+\begin{itemize}
     \item La décomposition en éléments simples de la fraction $\frac{1}{\mu_A(X)}$ donne :
 \[\frac{1}{\mu_A(X)} = \frac{a_1}{X-\lambda_1} + \cdots +\frac{a_r}{X-\lambda_r}\]
-où $a_i = \frac{1}{m_A'(\lambda_i)}$ pour tout $i$.
+où $a_i  \in \Kk^*$ pour tout $1 \le i \le r$.
 On multiplie par $\mu_A(X)$ des deux côtés :
 \[1 = a_1\frac{\mu_A(X)}{X-\lambda_1} + \cdots + a_r\frac{\mu_A(X)}{X-\lambda_r}\]
 On définit les polynômes :
@@ -873,22 +868,22 @@ Donc \[1  = a_1 Q_1(X) + \cdots + a_r Q_r(X).\]
 
     \item Si on applique cette égalité à la matrice $A$, on trouve :
 \[I_n = a_1Q_1(A) +  \cdots +a_rQ_r(A).\]
-Soit un vecteur $V \in \Kk^n$. On a :
+Soit un vecteur $v \in \Kk^n$. On a :
 \begin{equation}
 \label{eq:minidiag}
-V = a_1Q_1(A)(V) +\cdots+a_rQ_r(A)(V).
+v = a_1Q_1(A)(v) +\cdots+a_rQ_r(A)(v).
 \end{equation}
 
-    \item Or, pour tout $1 \le i \le r$, $Q_i(A)(V) \in \Ker (A -\lambda_iI_n)$.
-    En effet 
-\[(A-\lambda_iI_n)(Q_i(A)(V)) = \mu_A(A)(V) = 0 .\]
+    \item Or, pour tout $1 \le i \le r$, $Q_i(A)(v) \in \Ker (A -\lambda_iI_n)$.
+    En effet,
+\[(A-\lambda_iI_n)(Q_i(A)(v)) = \mu_A(A)(v) = 0 .\]
     
-    \item Par conséquent, l'égalité (\ref{eq:minidiag}), implique que
-    $V \in \Ker (A -\lambda_1I_n) + \cdots + \Ker (A -\lambda_rI_n)$.
-    Ceci étant vrai quelque soit $V \in \Kk^n$ alors 
-    $$\Kk^n = \Ker (A -\lambda_1I_n) + \cdots + \Ker (A -\lambda_rI_n)$$
+    \item Par conséquent, l'égalité (\ref{eq:minidiag}) implique que
+    $v \in \Ker (A -\lambda_1I_n) + \cdots + \Ker (A -\lambda_rI_n)$.
+    Ceci étant vrai quel que soit $v \in \Kk^n$, alors 
+    $$\Kk^n = \Ker (A -\lambda_1I_n) + \cdots + \Ker (A -\lambda_rI_n).$$
     
-    Mais d'autre part, les valeurs propres étant distinctes, les sous-espaces propres sont en somme directe (voir le chapitre \og{}Diagonalisation\fg{}).
+    Mais, d'autre part, les valeurs propres étant distinctes, les sous-espaces propres sont en somme directe (voir le chapitre \og{}Diagonalisation\fg{}).
     En conclusion :    
     \[\Kk^n = \Ker (A-\lambda_1I_n)\oplus \cdots \oplus \Ker (A-\lambda_rI_n)\]
 C'est exactement dire que $A$ est diagonalisable.
@@ -903,18 +898,18 @@ Remarque : pour la réciproque, on peut aussi utiliser le lemme des noyaux (voir
 \medskip
 
 \begin{corollaire}
-Une matrice $A \in M_n(\Kk)$ est diagonalisable sur $\Kk$ si et seulement si elle admet un polynôme annulateur scindé à racines simples sur $\Kk$.
+Une matrice $A \in M_n(\Kk)$ est diagonalisable sur $\Kk$ si et seulement si elle admet un polynôme annulateur scindé à racines simples dans $\Kk$.
 \end{corollaire}
 
 \begin{corollaire}
-Soit $f$ un endomorphisme de $E$, diagonalisable sur $\Kk$. Si $F$ est un sous-espace de $E$ stable par $f$, alors la restriction $f_{|F}$ est encore diagonalisable.
+Soit $f$ un endomorphisme de $E$, diagonalisable sur $\Kk$. Si $F$ est un sous-espace vectoriel de $E$ stable par $f$, alors la restriction $f_{|F}$ est encore diagonalisable sur $\Kk$.
 \end{corollaire}
 
 \begin{proof}
 En effet, 
-\[\mu_f(f) = 0 \implies \mu_f(f_{|F}) = 0 \implies \mu_{f_{|F}} \text{ divise } \mu_f\]
-Mais si $\mu_f$ est scindé à racines simples sur $\Kk$, 
-tous ses diviseurs le sont aussi. En particulier $\mu_{f_{|F}}$ est scindé à racines simples, donc $f_{|F}$ est diagonalisable.
+\[\mu_f(f) = 0 \implies \mu_f(f_{|F}) = 0 \implies \mu_{f_{|F}} \text{ divise } \mu_f.\]
+Mais si $\mu_f$ est scindé à racines simples dans $\Kk$, 
+tous ses diviseurs le sont aussi. En particulier, $\mu_{f_{|F}}$ est scindé à racines simples dans $\Kk$, donc $f_{|F}$ est diagonalisable.
 \end{proof}
 
 
@@ -927,7 +922,7 @@ tous ses diviseurs le sont aussi. En particulier $\mu_{f_{|F}}$ est scindé à r
 \sauteligne
 \begin{enumerate}
 
-  \item Soit $P$ un polynôme annulateur d'un endomorphisme $f$. Montrer que pour tout 
+  \item Soit $P$ un polynôme annulateur d'un endomorphisme $f$. Montrer que, pour tout 
   $\lambda \in \Sp(f)$, $P(\lambda) = 0$.
   
   \item Montrer que deux matrices semblables ont le même polynôme minimal.

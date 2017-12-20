@@ -85,7 +85,7 @@ Avec cette notation matricielle, le système différentiel (\ref{eq:sysdiff}) de
 \mybox{$X'(t) = A X(t).$}
 
 
-\defi{Résoudre} le système linéaire $X'=AX$, avec $A \in M_n(\Kk)$ (ou $A \in M_n(\Cc)$) une matrice constante, c'est donc trouver $X(t)$ dérivable (c'est-à-dire $n$ fonctions $x_1(t),\ldots,x_n(t)$ dérivables) tel que $X'(t) = A X(t)$, pour tout $t \in \Rr$.
+\defi{Résoudre} le système linéaire $X'=AX$, avec $A \in M_n(\Rr)$ (ou $A \in M_n(\Cc)$) une matrice constante, c'est donc trouver $X(t)$ dérivable (c'est-à-dire $n$ fonctions $x_1(t),\ldots,x_n(t)$ dérivables) tel que $X'(t) = A X(t)$, pour tout $t \in \Rr$.
 
 
 \begin{remarque*}
@@ -333,7 +333,7 @@ $$\frac{\dd}{\dd t} \exp(a t) = a \exp(at).$$
 L'espace vectoriel $M_n(\Rr)$ étant un espace vectoriel de 
 dimension finie sur lequel toutes les normes sont 
 équivalentes, on en choisit une que l'on note $\| \cdot \|$.
-Par exemple  $\| A \| = \max_{1\le i,j \le n}( |a_{ij} | )$.
+Par exemple, $\| A \| = \max_{1\le i,j \le n}( |a_{ij} | )$.
 
 \bigskip
 
@@ -423,7 +423,7 @@ L'exponentielle de matrices (réelles ou complexes) vérifie les propriétés su
 \begin{proposition}[Propriétés de l'exponentielle]
 \sauteligne
 \begin{enumerate}
-  \item \label{it:exp1} Si on note $O_n$ la matrice nulle, $\exp(O_n)=I_n$.
+  \item \label{it:exp1} Si on note $O_n$ la matrice nulle, alors $\exp(O_n)=I_n$.
   \item \label{it:exp2} Si $A$ et $B\in M_n(\Rr)$ (ou $M_n(\Cc)$) vérifient $AB=BA$, alors $\exp(A+B)=\exp(A) \cdot \exp(B)$.
   \item \label{it:exp3} Pour toute matrice $A\in M_n(\Rr)$ (ou $M_n(\Cc)$), la matrice $\exp(A)$ est inversible et $(\exp(A))^{-1}=\exp(-A)$.
   \item \label{it:exp4} $\exp (kA) = (\exp(A))^k$ pour tout $k\in \Zz$.  
@@ -456,7 +456,7 @@ matrices $A$ et $-A$ commutent, d'où $$\exp(A) \cdot \exp(-A) = \exp(A-A)=\exp(
 Le calcul de l'exponentielle d'une matrice peut s'effectuer en se ramenant aux calculs de l'exponentielle d'une matrice diagonale et d'une matrice nilpotente.
 On se ramènera à une telle situation par le résultat suivant :
 \begin{lemme}
-Si $A$, $P\in M_n(\Cc)$, et est $P$ inversible, on a $\exp(P^{-1}AP)=P^{-1}\exp(A) P$.
+Si $A$, $P\in M_n(\Cc)$, et $P$ est inversible, on a $\exp(P^{-1}AP)=P^{-1}\exp(A) P$.
 \end{lemme}
 
 \begin{proof}
@@ -668,7 +668,7 @@ $\frac{\dd}{\dd t} \exp(t A) = \exp(t A) A$.
 
 \begin{proof}
 Notons $$E(t)=\exp(tA) = \sum_{k=0}^{+\infty}{\frac{1}{k!}}t^kA^k=\sum_{k=0}^{+\infty}E_k(t)$$
-où $E_k(t)={\frac{1}{k!}}t^kA^k$. On a $E'_0(t) = 0$ et, pour tout $k>0$, on a 
+où $E_k(t)={\frac{1}{k!}}t^kA^k$. On a $E'_0(t) = 0$ et, pour tout $k>0$, 
 $$E'_k(t)={\frac{1}{(k-1)!}}t^{k-1}A^k=AE_{k-1}(t).$$
 Pour des raisons de convergence normale, comme dans le cas des séries de fonctions, on a 
 $$E'(t)=\sum_{k=0}^{+\infty}E'_k(t)=\sum_{k=1}^{+\infty}A E_{k-1}(t)=A E(t).$$
@@ -684,7 +684,7 @@ $$E'(t)=\sum_{k=0}^{+\infty}E'_k(t)=\sum_{k=1}^{+\infty}A E_{k-1}(t)=A E(t).$$
 \begin{enumerate}
 
   \item Vérifier que
-$\exp \left(t.
+$\exp \left(t \cdot 
 \left(\begin{smallmatrix}
 0 & -1\\
  1& 0
@@ -801,7 +801,7 @@ $X(t) = \exp(tA) \cdot X_0$ pour tout $t$.
   
   \item \textbf{Réduction à la forme $D + N$.} 
   
-  Si le polynôme caractéristique de $A$ est scindé (ce qui est toujours vrai sur $\Cc$), alors la décomposition de Dunford permet d'écrire $A$ sous la forme  \og{}diagonalisable + nilpotente\fg{}. Autrement dit, il existe $P$ une matrice inversible telle que la matrice $P^{-1}AP=D+N$ avec $D$ diagonale, $N$ nilpotente et $ND=DN$.
+  Si le polynôme caractéristique de $A$ est scindé (ce qui est toujours vrai sur $\Cc$), alors la décomposition de Dunford permet d'écrire $A$ sous la forme  \og{}diagonalisable + nilpotente\fg{}. Autrement dit, il existe une matrice inversible $P$ telle que la matrice $P^{-1}AP=D+N$ avec $D$ diagonale, $N$ nilpotente et $ND=DN$.
   
   On note cette matrice $B = P^{-1}AP=D+N$.
   
@@ -912,7 +912,7 @@ avec pour \og{}conditions initiales\fg{} : $x_1(0) = 1,x_2(0) = 1, x_3(0) = 0$.
   e^t & (-3t + 1)e^{2t} & 3te^{2t} \\
   \frac12 e^t & -3te^{2t} & (3t + 1)e^{2t} \\
   0 & (t+\frac23)e^{2t} & -(t + 1)e^{2t}
-  \end{pmatrix} \cdot V$$
+  \end{pmatrix} \cdot V.$$
    
   \item \textbf{Solution en $X$ avec condition initiale.} 
   
@@ -926,8 +926,8 @@ On trouve alors $X(t) = P\exp(tB)V_0$, c'est-à-dire
 \[
 \left\{
 \begin{array}{rcl}
-x_1(t) &=& (-3t+3)e^{2t}-2e^t\,,\\
-x_2(t) &=& (-3t+2)e^{2t}-e^t\,,\\
+x_1(t) &=& (-3t+3)e^{2t}-2e^t\\
+x_2(t) &=& (-3t+2)e^{2t}-e^t\\
 x_3(t) &=& te^{2t}.
 \end{array}
 \right.
@@ -1056,7 +1056,7 @@ $x(t) = v_1 e^{\lambda t}$ est solution de l'équation différentielle $x''(t) +
  
 \begin{theoreme}
 Soit l'équation différentielle $x''(t)+px'(t)+qx(t)=0$
-et son équation caractéristique $X^2+pX+q=0$, où $p,q \in \R2$. 
+et son équation caractéristique $X^2+pX+q=0$, où $p,q \in \Rr$. 
 \begin{itemize}
   \item Si $\lambda_1$ et $\lambda_2$ sont deux racines réelles distinctes de l'équation caractéristique, les solutions de l'équation différentielle sont les :
 $$\alpha e^{\lambda_1t} + \beta e^{\lambda_2t} \qquad (\alpha,\beta \in \Rr).$$
@@ -1094,11 +1094,11 @@ Quelles sont les solutions de l'équation différentielle $x''+x=0$ ?
   
   \item \textbf{Seconde méthode.} 
 
-  \'Ecrivons l'équation sous forme du système différentiel $X' = AX$ avec
+  \'Ecrivons l'équation sous la forme du système différentiel $X' = AX$ avec
   
 $$
-X(t) = \begin{pmatrix}x(t)\cr x'(t)\end{pmatrix}\qquad 
-X'(t) = \begin{pmatrix}x'(t)\cr x''(t)\end{pmatrix}\qquad
+X(t) = \begin{pmatrix}x(t)\cr x'(t)\end{pmatrix},\qquad 
+X'(t) = \begin{pmatrix}x'(t)\cr x''(t)\end{pmatrix},\qquad
 A = \begin{pmatrix}0&1\cr-1&0\end{pmatrix}.
 $$
 On retrouve les solutions de notre système précédent via la matrice $\exp (tA)$, c'est-à-dire après calculs 
@@ -1241,7 +1241,7 @@ et $\lambda_2 = -1$ (de multiplicité $m_2 = 1$).
   \item La valeur propre $\lambda_1 = 2$ conduit aux solutions
   $(a+bt)e^{2t}$ avec $a,b \in \Rr$.
 
-  \item La valeur propre $\lambda_2 = -1$, conduit aux solutions $ce^{-t}$ avec $c\in\Rr$.
+  \item La valeur propre $\lambda_2 = -1$ conduit aux solutions $ce^{-t}$ avec $c\in\Rr$.
   
   \item L'ensemble des solutions est donc
   $$\big\{ t \mapsto (a+bt)e^{2t} + ce^{-t} \mid a,b,c \in \Rr \big\}.$$
@@ -1289,7 +1289,7 @@ On cherche une formule qui donne directement $u_k$ en fonction de $k$ (et ne dé
 Une première formule s'obtient à l'aide de matrices.
 Soient
 $$X_k =  \begin{pmatrix}u_k \\ u_{k+1}\end{pmatrix}, \qquad X_{k+1} =  \begin{pmatrix}u_{k+1} \\ u_{k+2}\end{pmatrix},
-\qquad A = \begin{pmatrix}0&1\\1&1\end{pmatrix}$$
+\qquad A = \begin{pmatrix}0&1\\1&1\end{pmatrix}.$$
 Alors on a 
 $$X_{k+1} = A X_k$$
 et ainsi, la suite de Fibonacci est aussi définie par :
@@ -1297,7 +1297,7 @@ $$X_0 = \begin{pmatrix}0\\1\end{pmatrix} \qquad \text{ et } \qquad X_k = A^k X_0
 La formule $X_k = A^k X_0$ est une première formule qui permet de calculer directement $X_k$. Il existe une méthode efficace pour calculer $A^k$ : l'exponentiation rapide. 
 
 Mais le but de cette section est de trouver un autre type de formule directe, en faisant l'analogie entre
-l'équation $X_{k+1} = A X_k$ avec un système différentiel $X'=AX$.
+l'équation $X_{k+1} = A X_k$ avec le système différentiel $X'=AX$.
 
 De façon plus générale, on considère une suite $(u_k)_{k \in \Nn}$ qui vérifie la relation de récurrence :
 \begin{equation}
@@ -1335,7 +1335,7 @@ pour des polynômes $P_i$ de degré $< m_i$ (pour tout $i$).
 \begin{itemize}
   \item Les $P_i$ peuvent être déterminés par $u_0,\ldots,u_{n-1}$.
   \item Pour $n=1$, les suites vérifiant $u_{k+1} = a u_k$ sont les suites géométriques.
-  L'équation caractéristique est $x=a$. Elles s'écrivent bien $u_k = u_0 a^k$.
+  L'équation caractéristique est $X=a$. Elles s'écrivent bien $u_k = u_0 a^k$.
 \end{itemize}
 \end{remarque*}
 
@@ -1420,7 +1420,7 @@ Soient $X_1$ et $X_2$ deux solutions du système différentiel $X'=AX$, et
 soient $T_1$ et $T_2$ les deux trajectoires associées.
 
 Supposons que $T_1 \cap T_2 \neq \varnothing$. Nous allons montrer qu'alors $T_1=T_2$.
-Soit $X_0 \in T_1 \cap T_2$, 
+Soit $X_0 \in T_1 \cap T_2$ : 
 il existe $t_1\in\Rr$ et $t_2\in\Rr$ tels que 
 $X_1(t_1)=X_0$ et $X_2(t_2)=X_0.$
 Mais on connaît la forme des solutions des systèmes différentiels (voir le théorème \ref{th:sysdiff}) :
@@ -1536,7 +1536,7 @@ $$X_{2}^{\Cc}(t)
 = \begin{pmatrix} e^t ( \cos(2t) + \ii \sin(2t) ) \\  e^t( -\sin(2t) + \ii \cos(2t) ) \end{pmatrix}.$$
 
 
-Par contre $X_1^{\Cc}$ et $X_2^{\Cc}$ sont des solutions à valeurs complexes.
+Par contre, $X_1^{\Cc}$ et $X_2^{\Cc}$ sont des solutions à valeurs complexes.
 Comme $A$ est une matrice réelle, alors ces solutions sont conjuguées, et la partie réelle et la partie imaginaire de $X_1^{\Cc}$ (ou $X_2^{\Cc}$) sont solutions :
 $$X_1(t) = \Re X_1^{\Cc}(t) =
  \begin{pmatrix}  \cos(2t)e^t \\  -\sin(2t)e^t  \end{pmatrix}
@@ -1588,7 +1588,7 @@ Il est ici facile de calculer $\exp(tA)$ :
   $$\exp(tA) = \exp(tD)\cdot \exp(tN) = \exp(tD) \cdot (I+tN)
   = \begin{pmatrix}e^t& 0\cr 0&e^t\end{pmatrix}
   \begin{pmatrix}1& t\cr 0&1\end{pmatrix}
-  = \begin{pmatrix}e^t& te^t\cr 0&e^t\end{pmatrix}$$
+  = \begin{pmatrix}e^t& te^t\cr 0&e^t\end{pmatrix}.$$
   
 \end{itemize}
 
@@ -1623,7 +1623,7 @@ y(t) &=& be^{t}
   \item Diagonaliser la matrice $A =  \left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix} \right)$,
   c'est-à-dire déterminer une matrice diagonale $D$ semblable à $A$.   
   Trouver les solutions du système différentiel $X'=DX$, et tracer les trajectoires.
-  En déduire les solutions et trajectoires du système $X'=AX$.
+  En déduire les solutions et les trajectoires du système $X'=AX$.
   
 \end{enumerate}
 \end{miniexercices}
