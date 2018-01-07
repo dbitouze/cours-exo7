@@ -79,7 +79,7 @@ qui traduite du latin donne \og Les dés sont jetés \fg.
 %-------------------------------------------------------
 \subsection{Des chiffres et des lettres}
 
-Il est plus facile de manipuler des nombres que des lettres, aussi nous passons à une formulation ma\-thématique.
+Il est plus facile de manipuler des nombres que des lettres, aussi nous passons à une formulation arithmétique.
 Nous associons à chacune des $26$ lettres de $A$ à $Z$ un nombre de $0$ à $25$.
 En termes mathématiques, nous définissons une bijection :
 $$f : \big\{ A, B, C, \ldots, Z\big\} \longrightarrow \big\{ 0, 1, 2, \ldots, 25\big\}$$
@@ -88,7 +88,7 @@ $$A \longmapsto 0 \quad B \longmapsto 1 \quad C \longmapsto 2 \quad \ldots  \qua
 
 Ainsi "\public{A L E A}" devient "\public{0 11 4 0}".
 
-Le chiffrement de César est un cas particulier de \defi{chiffrement mono-alphabétique},
+Le chiffrement de César est un cas particulier de \defi{substitution mono-alphabétique},
 c'est-à-dire un chiffrement lettre à lettre.
 
 Quel est l'intérêt ? Nous allons voir que le chiffrement de César correspond à une opération mathématique très simple.
@@ -305,13 +305,13 @@ le chiffrement de César. Tout d'abord la fonction de chiffrement se programme e
 \insertcode{algos/cesar-tex1.py}{cesar.py (1)}
 
 Ici \codeinline{x} est un nombre de $\{0,1,\ldots,25\}$ et \codeinline{k}
-est le décalage. \codeinline{(x+k)\%26} renvoie le reste modulo $26$ de la somme \codeinline{(x+k)}.
+est le décalage. \codeinline{(x+k)\%26} a pour valeur le reste modulo $26$ de la somme \codeinline{(x+k)}.
 Pour le décryptage, c'est aussi simple :
 
 \insertcode{algos/cesar-tex2.py}{cesar.py (2)}
 
 
-Pour chiffrer un mot ou un phrase, il n'y a pas de problèmes théoriques, mais seulement
+Pour chiffrer un mot ou une phrase, il n'y a pas de problèmes théoriques, mais seulement
 des difficultés techniques :
 \begin{itemize}
   \item Un mot ou une phrase est une chaîne de caractères, qui en fait se comporte comme une liste.
@@ -351,7 +351,7 @@ la clé $-k$.
 
 
 %-------------------------------------------------------
-\subsection{Chiffrement mono-alphabétique}
+\subsection{Substitution mono-alphabétique}
 
 %.............................
 \subsubsection{Principe}
@@ -421,8 +421,8 @@ $26$ choix possibles (nous avions choisi F), pour B il reste $25$ choix possible
 enfin pour Z il ne reste qu'une seule possibilité, la seule lettre non encore choisie.
 Au final il y a : $26\times 25 \times 24 \times \cdots \times 2 \times 1$ soit $26!$ choix de clés.
 Ce qui fait environ $4 \times 10^{26}$ clés. Il y a plus de clés différentes que de grains de sable
-sur Terre ! Si un ordinateur pouvait tester $1 \; 000\; 000$ de clés par seconde, il lui faudrait alors
-$12$ millions d'années pour tout énumérer.
+sur Terre ! Si un ordinateur pouvait tester $1$ milliard de clés par seconde, il lui faudrait alors
+$12$ milliards d'années pour tout énumérer.
 
 
 %.............................
@@ -538,7 +538,7 @@ La fonction de déchiffrement est juste $C_{-n_1,-n_2,\ldots,-n_k}$.
 
 Il y a $26^k$ choix possibles de clés, lorsque les blocs sont de longueur $k$.
 Pour des blocs de longueur $k=4$ cela en donne déjà $456\;976$, et même si un ordinateur teste
-toutes les combinaisons possibles sans problème, il n'est pas question de parcourir
+toutes les combinaisons possibles sans problème, il n'est pas aisé de parcourir
 cette liste pour trouver le message en clair, c'est-à-dire celui qui est compréhensible !
 
 Il persiste tout de même une faiblesse du même ordre que celle rencontrée dans le chiffrement mono-alphabétique : la lettre \prive{A}
@@ -851,7 +851,7 @@ $$6 \quad 17\quad 13\quad 5\quad 15 \quad9\quad 23\quad 25\quad 3 \quad11\quad 1
 
 Les trois nombres $(a,b,u_0)$ représentent la clé principale et la suite des $(u_n)_{n\in\Nn}$ les clés secondaires.
 
-Avantages : à partir d'une clé principale on a généré une longue liste de clés secondaires.
+Avantages : à partir d'une clé principale courte (ici trois nombres) on a généré une longue liste de clés secondaires.
 Inconvénients : la liste n'est pas si aléatoire que cela, elle se répète ici avec une période de longueur $12$ : $17, 13, 5,..., 17, 13, 5,...$
 
 
@@ -929,7 +929,7 @@ Comme chaque opération élémentaire est inversible,
 on applique un protocole inverse pour déchiffrer.
 
 
-Dans le vrai protocole du DES, la clé principale est de taille $64$ \emph{bits},
+Dans le vrai protocole du DES, les blocs sont de taille $64$ \emph{bits},
 il y a plus de manipulations sur le message et les étapes mentionnées ci-dessus
 sont effectuées $16$ fois (on parle de tours).
 \`A chaque tour, une clé différente est utilisée.
@@ -1153,7 +1153,7 @@ Il est clair que ce principe repose uniquement sur le secret de la méthode.
 
 Cette méthode rudimentaire va à l'encontre du principe de Kerckhoffs.
 Le principe de Kerckhoffs s’énonce ainsi : \\
-\centerline{<<La sécurité d'un système de chiffrement ne doit reposer que sur la clé.>>}
+\centerline{<<La sécurité d'un système de chiffrement ne doit reposer que sur le secret de la clé.>>}
 
 \medskip
 
@@ -1356,10 +1356,10 @@ connaissent la trappe secrète. (Attention, dans le cas de cet exemple,
 la fonction $f$ n'est pas bijective.)
 
 %-------------------------------------------------------
-\subsection{Chiffrement à clé privée}
+\subsection{Chiffrement à clé secrète}
 
 Petit retour en arrière.
-Les protocoles étudiés dans les chapitres précédents étaient des \defi{chiffrements à clé privée}.
+Les protocoles étudiés dans les chapitres précédents étaient des \defi{chiffrements à clé secrète}.
 De façon imagée, tout se passe
 comme si Bruno pouvaient déposer son message dans un coffre fort pour Alice,
 Alice et Bruno étant les seuls à posséder la clé du coffre.
@@ -1534,7 +1534,7 @@ $$\prive{\mathcal{D}} : x\longmapsto x^\prive{7} \pmod{100}.$$
 Dans la pratique, un chiffrement à clé publique nécessite plus de calculs et est donc assez lent, plus lent qu'un chiffrement à clé privée. Afin de gagner en rapidité, un protocole hybride peut être mis en place de la façon suivante :
 \begin{itemize}
 \item à l'aide d'un protocole de chiffrement à clé publique, Alice et Bruno échangent une clé,
-\item Alice et Bruno utilise cette clé dans un protocole de chiffrement à clé privée.
+\item Alice et Bruno utilise cette clé dans un protocole de chiffrement à clé secrète.
 \end{itemize}
 
 
@@ -1784,6 +1784,7 @@ si \myboxinline{$ax \equiv 1 \pmod{n}$.}
 Trouver un inverse de $a$ modulo $n$ est donc un cas particulier de l'équation $ax \equiv b \pmod n$.
 
 \begin{proposition}
+\sauteligne
 \begin{itemize}
   \item $a$ admet un inverse modulo $n$ si et seulement si $a$ et $n$ sont premiers entre eux.
   \item Si $au+nv=1$ alors $u$ est un inverse de $a$ modulo $n$.
@@ -1814,7 +1815,7 @@ Voici le code :
 Nous aurons besoin de calculer rapidement des puissances modulo $n$.
 Pour cela il existe une méthode beaucoup plus efficace que de calculer d'abord
 $a^k$ puis de le réduire modulo $n$. Il faut garder à l'esprit que les entiers
-que l'on va manipuler ont des dizaines voir des centaines de chiffres.
+que l'on va manipuler ont des dizaines voire des centaines de chiffres.
 
 Voyons la technique sur l'exemple de $5^{11} \pmod{14}$.
 L'idée est de seulement calculer $5, 5^2, 5^4, 5^8...$ %, 5^{16},...$
